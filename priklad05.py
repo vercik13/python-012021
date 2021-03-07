@@ -13,11 +13,11 @@ prodeje2020 = {
     "Zkus mě chytit": 6671,
 }
 name = input("Zadejte název knihy:")
-if name in prodeje2019.values() and prodeje2020.values():
-    total = 0
-    total += value
-    print(f" Knihy {name} se prodalo {total} kusů. ")
+key = prodeje2019(keys)
+print(key)
 
 
-
-
+if name in prodeje2019:
+    print(prodeje2019[name])
+else:
+    print(prodeje2020[name])
