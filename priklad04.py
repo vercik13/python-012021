@@ -1,4 +1,4 @@
-morseCode = {
+morse = {
     "0": "-----",
     "1": ".----",
     "2": "..---",
@@ -45,3 +45,10 @@ morseCode = {
     "(": "-.--.",
     ")": "-.--.-"
 }
+def to_morse(text):
+    result = ''
+    for c in text:
+        result += morse.get(c, '?') + '|'
+    return result
+text = input("Zadejte text: ")
+print(to_morse(text))

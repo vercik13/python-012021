@@ -7,9 +7,10 @@ sklad = {
     }
 key = input("Zadejte kod položky: ")
 if key in sklad:
-    print("Zadejte množství: ")
+    number = int(input("Zadejte množství: "))
+    if sklad [key] >= number:
+        print("Poptávku lze uspokojit v plné výši. ")
+    if sklad [key] < number:
+        print("Lze prodat pouze omezené množství. ")
 else:
     print("Požadované zboží není skladem. ")
-number = int
-if number in sklad:
-    inStock = sklad.pop(number)
