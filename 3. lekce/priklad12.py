@@ -1,27 +1,37 @@
 class Auta:
-    def __init__(self, name, registration_plate, km):
+    def __init__(self, name, registration_mark, km, ):
         self.name = name
-        self.registration_plate = registration_plate
+        self.registration_mark = registration_mark
         self.km = km
         self.available = True
 
-    def pujc_auto(self):
-        self.available = False
+    def __str__(self):
+        return f"Vozidlo {self.name} registrační značky {self.registration_mark}."
 
-    def get_info(self):
-        if self.available:
-            return f"Potvrzuji zapůjčení vozidla {self.name}, registrační značky {self.registration_plate}."
-        return f"Vozidlo {self.name} není k dispozici"
+    def pujcAuto(self):
+        if self.available == True:
+            self.available = False
+            return f'Potvrzuji zapůjčení vozidla'
+        else:
+            return f'Vozidlo není k dispozici'
 
-peugeot = Auta("Peugeot 403 Cabrio", "4A2 3020", 47534 )
-skoda = Auta("Škoda Octavia", "1P3 4747", 41253 )
+    def getInfo(self):
+        return f'Vozidlo {self.name}, poznávací značky {self.registration_mark}'
 
-input("Jaké vozidlo si přejete půjčit: ")
-print(peugeot.get_info())
-peugeot.pujc_auto()
-print(peugeot.get_info())
+peugeot = Auta('Peugeot 403 Cabrio', '4A2 3020', '47534')
+skoda = Auta('Škoda Octavia', '1P3 4747', '41253')
 
-input("Jaké vozidlo si přejete půjčit: ")
-print(skoda.get_info())
-skoda.pujc_auto()
-print(skoda.get_info())
+key = input('Jakou značku vozidla si přejete: ')
+
+if key == "peugeot":
+    print(peugeot.getInfo())
+    print(peugeot.pujcAuto())
+else:
+    print(skoda.getInfo())
+    print(skoda.pujcAuto())
+
+key_dva = input('Jakou značku vozidla si přejete: ')
+if key_dva == "peugeot":
+    print(peugeot.pujcAuto())
+else:
+    print(skoda.pujcAuto())
