@@ -1,0 +1,10 @@
+<h2>Přehled výpůjček</h2>
+<p>Zde vidíte přehled výpůjček</p>
+<ul>
+  {% for vypujcky in object_list %}
+  <li><a href="{% url 'detail_vypujcka' vypujcky.pk %}">{{ vypujcky.auto }}</li>
+  {% endfor%}
+</ul>
+<p>
+<a href="{% url "pridanivypujcky.html" %}">Přidej výpůjčku</a>
+  </p>

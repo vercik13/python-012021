@@ -17,7 +17,6 @@ class Migration(migrations.Migration):
                 ('jmeno', models.CharField(max_length=100)),
                 ('prijmeni', models.CharField(max_length=1000)),
                 ('cislo_ridicskeho_prukazu', models.CharField(max_length=100)),
-                ('datum_narozeni', models.DateField()),
             ],
         ),
     ]

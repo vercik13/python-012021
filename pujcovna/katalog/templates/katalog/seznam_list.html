@@ -1,0 +1,16 @@
+<h2>Seznam aut</h2>
+
+<table>
+  <tr>
+    <td>{% for auto in object_list %}
+    <li><a href="{% url 'detail_auto' auto.pk %}">{{ auto.znacka_vozidla }}</li>
+        {% endfor%}
+    </td>
+  </tr>
+</table>
+<p>
+<a href="{% url "pridaniautomobilu.html" %}">Přidej automobil</a>
+  </p>
+<p>
+<a href="{% url "pridanivypujcky.html" %}">Přidej výpůjčku</a>
+  </p>

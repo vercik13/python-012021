@@ -1,0 +1,7 @@
+<h2>Přehled zákazníků</h2>
+<p>Zde vidíte přehled zákazníků</p>
+<ul>
+  {% for zakaznik in object_list %}
+  <li><a href="{% url 'detail_zakaznik' zakaznik.pk %}">{{ zakaznik.prijmeni }} {{ zakaznik.jmeno }}</li>
+  {% endfor%}
+</ul>

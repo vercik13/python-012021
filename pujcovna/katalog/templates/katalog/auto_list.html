@@ -1,0 +1,10 @@
+{% block content %}
+
+<h2>Přehled aut</h2>
+<p>Zde vidíte přehled vozů</p>
+<ul>
+  {% for auto in object_list %}
+    <li><a href="{% url 'detail_auto' auto.pk %}">{{ auto.znacka_vozidla }}</li>
+  {% endfor%}
+</ul>
+{% endblock %}
