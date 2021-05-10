@@ -10,14 +10,14 @@ prodeje2020 = {
     "Vražda podle knihy": 2510,
     "Past": 2364,
     "Zločinný steh": 5412,
-    "Zkus mě chytit": 6671,
 }
-name = input("Zadejte název knihy:")
-key = prodeje2019(keys)
-print(key)
+key = input("Zadejte název knihy:")
+pocet = 0
 
+if key in prodeje2019:
+   pocet += prodeje2019[key]
 
-if name in prodeje2019:
-    print(prodeje2019[name])
-else:
-    print(prodeje2020[name])
+if key in prodeje2020:
+   pocet += prodeje2020[key]
+
+print(f'Knihy {key} se prodalo {pocet}');
