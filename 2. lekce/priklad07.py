@@ -489,6 +489,13 @@ staty = [
     {'name': 'Zimbabwe', 'capital': 'Harare', 'region': 'Africa', 'subregion': 'Eastern Africa', 'population': 14240168,
      'area': 390757.0}]
 
-region = input("Zadejte region: ")
-sumOfPopulation = {}
-for item in staty:
+region = input('Zadejte region: ')
+
+subregiony = {}
+for stat in staty:
+    if stat['region'] == region:
+        if stat['subregion'] in subregiony:
+            subregiony[stat['subregion']] += stat['population']
+        else:
+            subregiony[stat['subregion']] = stat['population']
+print(subregiony)
